@@ -12,8 +12,8 @@ class NetworkNode(models.Model):
     purchase_level = models.PositiveIntegerField(choices=LEVELS_CHOICES, verbose_name='Уровень')
     supplier = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='consumers',
                                  verbose_name="Поставщик")
-    arrears = models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True, default=0.00,
-                                  verbose_name="Задолженность")
+    debt = models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True, default=0.00,
+                               verbose_name="Задолженность")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
 
     def __str__(self):

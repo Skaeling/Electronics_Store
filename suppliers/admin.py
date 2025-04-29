@@ -4,12 +4,12 @@ from .models import NetworkNode, Contact, Product
 from django.utils.html import format_html
 
 
-def clear_arrears(modeladmin, request, queryset):
-    queryset.update(arrears=0.00)
+def clear_debt(modeladmin, request, queryset):
+    queryset.update(debt=0.00)
     modeladmin.message_user(request, 'Задолженность выбранных объектов сети погашена')
 
 
-clear_arrears.short_description = 'Обнулить задолженность перед поставщиками выбранных объектов сети'
+clear_debt.short_description = 'Обнулить задолженность перед поставщиками'
 
 
 class ContactInline(admin.StackedInline):
@@ -19,10 +19,10 @@ class ContactInline(admin.StackedInline):
 @admin.register(NetworkNode)
 class NetworkNodeAdmin(admin.ModelAdmin):
     exclude = ['created_at']
-    list_display = ("__str__", 'supplier_link', 'arrears')
+    list_display = ("__str__", 'supplier_link', 'debt')
     list_filter = ['contacts__city']
     inlines = [ContactInline]
-    actions = [clear_arrears]
+    actions = [clear_debt]
 
     def supplier_link(self, obj):
         if obj.supplier:
