@@ -37,7 +37,7 @@ class Contact(models.Model):
         return f'{self.email}({self.country})'
 
     class Meta:
-        verbose_name = 'Контакт'
+        verbose_name = 'Контакты'
         verbose_name_plural = 'Контакты'
 
 
