@@ -1,0 +1,160 @@
+[
+{
+  "model": "suppliers.networknode",
+  "pk": 1,
+  "fields": {
+    "title": "Belarus Digital Logistics",
+    "purchase_level": 1,
+    "supplier": 2,
+    "debt": "0.00",
+    "created_at": "2025-04-29T12:33:31.055Z"
+  }
+},
+{
+  "model": "suppliers.networknode",
+  "pk": 2,
+  "fields": {
+    "title": "Aquarius manufacturing facilities",
+    "purchase_level": 0,
+    "supplier": null,
+    "debt": "0.00",
+    "created_at": "2025-04-29T13:46:53.106Z"
+  }
+},
+{
+  "model": "suppliers.networknode",
+  "pk": 3,
+  "fields": {
+    "title": "IP Korochkin A.O.",
+    "purchase_level": 1,
+    "supplier": 2,
+    "debt": "300.00",
+    "created_at": "2025-04-29T13:48:12.274Z"
+  }
+},
+{
+  "model": "suppliers.networknode",
+  "pk": 4,
+  "fields": {
+    "title": "Electronics Pacts",
+    "purchase_level": 2,
+    "supplier": 3,
+    "debt": "200.00",
+    "created_at": "2025-04-29T13:50:14.639Z"
+  }
+},
+{
+  "model": "suppliers.networknode",
+  "pk": 5,
+  "fields": {
+    "title": "GK Mr Robot",
+    "purchase_level": 2,
+    "supplier": 1,
+    "debt": "40000.00",
+    "created_at": "2025-04-29T16:23:07.834Z"
+  }
+},
+{
+  "model": "suppliers.contact",
+  "pk": 1,
+  "fields": {
+    "email": "aqv@email.com",
+    "country": "Russia",
+    "city": "Shuya",
+    "street": "Lenina",
+    "building_number": "156",
+    "network_node": 2
+  }
+},
+{
+  "model": "suppliers.contact",
+  "pk": 2,
+  "fields": {
+    "email": "korochkin@email.com",
+    "country": "Russia",
+    "city": "Moscow",
+    "street": "Krasnaya",
+    "building_number": "67D",
+    "network_node": 3
+  }
+},
+{
+  "model": "suppliers.contact",
+  "pk": 3,
+  "fields": {
+    "email": "electronicsp@email.com",
+    "country": "Russia",
+    "city": "Samara",
+    "street": "Kropotkina",
+    "building_number": "32",
+    "network_node": 4
+  }
+},
+{
+  "model": "suppliers.contact",
+  "pk": 4,
+  "fields": {
+    "email": "blelworks@email.com",
+    "country": "Belarus",
+    "city": "Minsk",
+    "street": "Belaya",
+    "building_number": "143a",
+    "network_node": 1
+  }
+},
+{
+  "model": "suppliers.contact",
+  "pk": 5,
+  "fields": {
+    "email": "gkrm@email.com",
+    "country": "Russia",
+    "city": "Samara",
+    "street": "prospekt Pokrova",
+    "building_number": "1",
+    "network_node": 5
+  }
+},
+{
+  "model": "suppliers.product",
+  "pk": 1,
+  "fields": {
+    "name": "Laptop",
+    "model": "Aq 3010HHH",
+    "release_date": "2025-01-01",
+    "distributors": [
+      1,
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "suppliers.product",
+  "pk": 2,
+  "fields": {
+    "name": "Pad",
+    "model": "AQ Pad322444",
+    "release_date": "2025-04-30",
+    "distributors": [
+      2,
+      3,
+      5,
+      1
+    ]
+  }
+},
+{
+  "model": "suppliers.product",
+  "pk": 3,
+  "fields": {
+    "name": "Monoblock",
+    "model": "AQOne 789",
+    "release_date": "2025-04-30",
+    "distributors": [
+      2,
+      3,
+      1
+    ]
+  }
+}
+]
