@@ -8,8 +8,16 @@ class IsAdmin(permissions.BasePermission):
         return request.user.is_superuser
 
 
-class IsActiveUser(permissions.BasePermission):
-    message = "Yours account isn't active, please contact your system administrator in case of any misunderstanding"
+class IsActiveStuff(permissions.BasePermission):
+    message = "Only active stuff users can use this API"
 
     def has_permission(self, request, view):
-        return request.user.is_active
+        user = request.user
+        return bool(user and user.is_authenticated and user.is_active and user.is_staff)
+
+
+class IsUser(permissions.BasePermission):
+    message = "Данный профиль вам не принадлежит"
+
+    def has_object_permission(self, request, view, obj):
+        return obj == request.user
