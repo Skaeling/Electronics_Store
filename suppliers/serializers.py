@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.validators import UniqueValidator
 
-from .models import NetworkNode, Contact, Product
+from .models import Contact, NetworkNode, Product
 from .validators import SupplierLevelValidator, validate_debt
 
 

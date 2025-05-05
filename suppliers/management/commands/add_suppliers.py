@@ -1,7 +1,7 @@
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-from suppliers.models import NetworkNode, Contact, Product
+from suppliers.models import Contact, NetworkNode, Product
 
 
 class Command(BaseCommand):

@@ -1,6 +1,8 @@
 from rest_framework.routers import SimpleRouter
-from .views import SuppliersViewSet
+
 from suppliers.apps import SuppliersConfig
+
+from .views import SuppliersViewSet
 
 app_name = SuppliersConfig.name
 router = SimpleRouter()

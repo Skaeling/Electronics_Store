@@ -1,11 +1,9 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from rest_framework import exceptions
 
-from .models import NetworkNode, Contact, Product
-
-from django.utils.html import format_html
-
-from .validators import validate_debt, SupplierLevelValidator
+from .models import Contact, NetworkNode, Product
+from .validators import SupplierLevelValidator, validate_debt
 
 
 def clear_debt(modeladmin, request, queryset):
@@ -41,8 +39,8 @@ class NetworkNodeAdmin(admin.ModelAdmin):
     supplier_link.short_description = 'Поставщик'
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        """Исключает возможность выбора объектов сети 2-го уровня и текущего объекта в качестве поставщиков оборудования
-        при создании или обновлении объекта"""
+        """Исключает возможность выбора объектов сети 2-го уровня и текущего объекта в качестве
+        поставщиков оборудования при создании или обновлении объекта"""
         if db_field.name == "supplier":
             if 'admin' in request.path and 'change' in request.path:
                 object_id = request.resolver_match.kwargs.get('object_id')
