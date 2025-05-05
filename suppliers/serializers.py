@@ -55,7 +55,7 @@ class NetworkNodeSerializer(serializers.ModelSerializer):
         return network_node
 
     def update(self, instance, validated_data):
-        """Запрещает обновление поля debt"""
+        """Запрещает обновление поля debt и позволяет одновременное обновление или добавление контактов"""
         if 'debt' in validated_data:
             raise ValidationError({"debt": "Обновление поля 'debt' запрещено."})
 
